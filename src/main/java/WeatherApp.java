@@ -13,8 +13,6 @@ public class WeatherApp{
     public final static String apiKey = "4170999efb19400b9e921713232302";
     public static void main(String[] args)
     {
-        //swing();
-
         Scanner scanner = new Scanner(System.in);
         //String city  = scanner.nextLine();
         String city = JOptionPane.showInputDialog("Enter the city name");
@@ -127,53 +125,9 @@ public class WeatherApp{
     public static int getHumidity(JSONObject jsonObject){
         return jsonObject.getJSONObject("current").getInt("humidity");
     }
-
-    /**
-     * print input with 15 character width.
-     * @param str string do you want to print
-     */
-    public static String setw(String str, int size)
-    {
-        if(str.length()<=size)
-        {
-            while(str.length()<=size)
-            {
-                str+=" ";
-            }
-        }
-        return str;
-    }
-
-    public static String setw(int input , int size)
-    {
-        String str = Integer.toString(input);
-        if(str.length()<=size)
-        {
-            while(str.length()<=size)
-            {
-                str+=" ";
-            }
-        }
-        return str;
-    }
-    public static String setw(double input, int size)
-    {
-        String str = Double.toString(input);
-        if(str.length()<=size)
-        {
-            while(str.length()<=size)
-            {
-                str+=" ";
-            }
-        }
-        return str;
-    }
-
     public static void output(String city, double temp , int humy , int windDegree , double windSpeed , String windDirect , double feelTemp)
     {
         String out;
-        //out=setw("city", city.length()+3)+setw("temperature", 12 )+setw("humidity", 10)+setw("wind degree", 12)+setw("wind speed(khp)",15)+setw("wind direct" , 12)+setw("fesls-like temp", 15);
-        //out+="\n"+setw(city,city.length()+3)+setw(temp,12)+setw(humy,10)+setw(windDegree,12)+setw(windSpeed+"(khp)" , 15)+setw(windDirect,12)+setw(feelTemp,15);
         out="city : "+city;
         out+="\ntemperature : "+ temp;
         out+="\nhumidity : "+ humy;
@@ -182,7 +136,6 @@ public class WeatherApp{
         out+="\nwind direction : " + windDirect;
         out+="\nfeels-like temperature : " + feelTemp;
         JOptionPane.showMessageDialog(null,out);
-        //System.out.print(out);
     }
 
 }
