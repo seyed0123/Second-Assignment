@@ -13,8 +13,6 @@ public class WeatherApp{
     public final static String apiKey = "4170999efb19400b9e921713232302";
     public static void main(String[] args)
     {
-        Scanner scanner = new Scanner(System.in);
-        //String city  = scanner.nextLine();
         String city = JOptionPane.showInputDialog("Enter the city name");
         String JsonWetter;
         while(true)
